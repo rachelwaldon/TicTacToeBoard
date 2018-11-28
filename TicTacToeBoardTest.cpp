@@ -20,3 +20,11 @@ TEST(TicTacToeBoardTest, unitTestName)
 	ASSERT_TRUE(true);
 }
 */
+
+TEST(TicTacToeBoardTest, outofBounds)
+{
+	TicTacToeBoard obj;
+	Piece outcome = obj.getPiece(-5,5);
+	ASSERT_EQ(outcome, Invalid);
+}
+

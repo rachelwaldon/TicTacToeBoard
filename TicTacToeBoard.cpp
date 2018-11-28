@@ -19,7 +19,11 @@ TicTacToeBoard::TicTacToeBoard()
 **/
 Piece TicTacToeBoard::toggleTurn()
 {
-  return Invalid;
+  if(turn == X)
+	turn = O;
+  else if (turn == O)
+	turn = X;  
+  return turn;
 }
 
 /**
@@ -42,7 +46,14 @@ Piece TicTacToeBoard::placePiece(int row, int column)
 **/
 Piece TicTacToeBoard::getPiece(int row, int column)
 {
-  return Invalid;
+  Piece temp;
+  if (row > 3 || column > 3)
+	temp = Invalid;
+  else if (board[row][column] == Blank)
+	temp = Blank;
+  else
+	temp = board[row][column];
+  return temp;
 }
 
 /**
